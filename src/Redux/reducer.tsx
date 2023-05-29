@@ -24,7 +24,7 @@ const reducer = (state = initialState, action: ContactAction): State => {
     case ADD_CONTACT: {
       console.log("run");
 
-      const { firstName, lastName, status } = action.payload;
+      const { firstName, lastName } = action.payload;
       console.log("first", firstName);
 
       const existingContact = state.contacts.find(

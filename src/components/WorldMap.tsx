@@ -1,5 +1,5 @@
 import { Marker, Popup } from "react-leaflet";
-import L, { IconOptions, LeafletEvent } from "leaflet";
+import L, { IconOptions } from "leaflet";
 import markerIcon from "../images/icon/marker_icon.png";
 
 interface CountryInfo {

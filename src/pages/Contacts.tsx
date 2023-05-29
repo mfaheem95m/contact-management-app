@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { removeContact } from "../Redux/action";
 import { RootState } from "../Redux/store";
 import DefaultLayout from "../layout/DefaultLayout";
@@ -19,20 +18,13 @@ type Contact = {
 
 const Contacts = () => {
   // Define state variables
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [singleContact, setSingleContact] = useState<Contact | null>(null);
+
   const [clickedContact, setClickedContact] = useState<Contact | any>(null);
   const AllContacts = useSelector((store: RootState) => store.contacts);
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setEditShowModal] = useState(false);
 
   const dispatch = useDispatch();
-
-  // Function to toggle the contact modal
-  const togglePopup = (contact: Contact) => {
-    setSingleContact(contact);
-    setIsOpen(!isOpen);
-  };
 
   // Function to handle the close event of the contact modal
   const onClose = () => {

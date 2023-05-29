@@ -2,8 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { editContact } from "../Redux/action";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../Redux/store";
+import { useDispatch } from "react-redux";
 
 // Define the form values interface
 interface FormValues {
@@ -11,14 +10,6 @@ interface FormValues {
   lastName: string;
   status: string;
 }
-
-// Define the contact type
-type Contact = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  status: string;
-};
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object({
@@ -52,8 +43,6 @@ const EditContactModal: React.FC<MyFormProps> = ({
         lastName: "",
         status: "Active",
       };
-
-  const AllContacts = useSelector((store: RootState) => store.contacts);
 
   const handleSubmit = (values: FormValues) => {
     // Dispatch the editContact action with updated values

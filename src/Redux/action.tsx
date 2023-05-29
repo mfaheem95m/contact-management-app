@@ -40,12 +40,6 @@ interface EditContactAction {
   payload: EditContactPayload;
 }
 
-// Define a union type for all possible action types
-type ContactActionTypes =
-  | AddContactAction
-  | RemoveContactAction
-  | EditContactAction;
-
 // Define and export the action creators
 export const addContact = (payload: AddContactPayload): AddContactAction => {
   console.log(payload);
