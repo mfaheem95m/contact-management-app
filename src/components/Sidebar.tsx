@@ -14,7 +14,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const sidebar = useRef<any>(null);
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
-  const [sidebarExpanded, setSidebarExpanded] = React.useState(
+  const [sidebarExpanded] = React.useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
